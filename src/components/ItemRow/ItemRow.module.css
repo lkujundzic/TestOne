@@ -21,11 +21,32 @@
 }
 
 .itemImageSelected {
+    filter: brightness(50%);
+}
+
+.itemCenterImage {
+    display: block;
     width: 74px;
     height: 74px;
 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2,2);
+    animation: fade 1s linear;
+    animation-fill-mode:forwards;
+
     background: #303133;
-    opacity: 0.5;
+}
+
+@keyframes fade {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 .itemText {
@@ -40,6 +61,6 @@
     color: #303133;
 }
 
-.itemText__selected {
+.itemTextSelected {
     color: #06a9f6;
 }

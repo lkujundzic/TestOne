@@ -1,13 +1,9 @@
 import ItemRow from "../ItemRow/ItemRow";
 
-function ItemList() {
+function ItemList({ data }) {
     return (
         <div>
-            <ItemRow/>
-            <ItemRow/>
-            <ItemRow/>
-            <ItemRow/>
-            <ItemRow/>
+            {data.map((item, idx) => <ItemRow key={idx} avatar_url={item.avatar_url} filename={item.filename} />)}
         </div>
     );
 }

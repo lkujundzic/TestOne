@@ -17,6 +17,14 @@ function ListPage() {
     const [data, error, loading, axiosFetch] = useAxiosFunction();
 
     useEffect(() => {
+        // Reset Scroll.
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'instant'
+        });
+
+        // Fetch data.
         axiosFetch({
             axiosInstance: axios,
             method: 'get',
@@ -24,6 +32,7 @@ function ListPage() {
         });
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentPage]);
+
     return (
         <div className={styles.app}>
             <Header />

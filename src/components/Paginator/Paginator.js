@@ -10,22 +10,23 @@ function Paginator({currentPage, totalPages}) {
     // If it is index page, change it to "list", for the links to look nicer.
     if(!path.endsWith("list")) path += "list";
 
+    const handleNavigate = (e, url) => {
+        e.preventDefault();
+        navigate(url);
+    }
+
     const maxPageButtonsPerPage = 3;
     let controls = [];
 
     // Do we have more than one page?
     if(totalPages > 1) {
-        // Yes.
-        let firstPageForButtons = 1;
-        let lastPageForButtons = 1;
-
         // Middle button position, for the current button.
         let maxPageButtonsPerPageIsEven = (Math.ceil(maxPageButtonsPerPage / 2) === Math.floor(maxPageButtonsPerPage / 2))? 1 : 0;
         let middleButtonPosition = Math.ceil(maxPageButtonsPerPage / 2) + maxPageButtonsPerPageIsEven;
 
         // Calculate first and last page for buttons.
-        firstPageForButtons = currentPage - middleButtonPosition + (maxPageButtonsPerPageIsEven? 0 : 1);
-        lastPageForButtons = firstPageForButtons + maxPageButtonsPerPage - 1;
+        let firstPageForButtons = currentPage - middleButtonPosition + (maxPageButtonsPerPageIsEven? 0 : 1);
+        let lastPageForButtons = firstPageForButtons + maxPageButtonsPerPage - 1;
 
         if(firstPageForButtons < 1) {
             firstPageForButtons = 1;
@@ -49,7 +50,12 @@ function Paginator({currentPage, totalPages}) {
         // Do we need control to go to the first page on the left side of page buttons?
         if(firstPageForButtons > 1) {
             controls.push(
-                <a key={controls.length} className={styles.number} href={`${path}?page=1`}>1</a>);
+                <a 
+                    key={controls.length} 
+                    className={styles.number} 
+                    href={`${path}?page=1`}
+                    onClick={(e) => { handleNavigate(e, `${path}?page=1`); }}
+                    >1</a>);
         }
 
         // Do we need ellipsis before the left side of page buttons?
@@ -64,7 +70,12 @@ function Paginator({currentPage, totalPages}) {
                 (pageButtonIndex === currentPage)?
                     <span key={controls.length} className={styles.inactive}>{pageButtonIndex}</span> 
                     :
-                    <a key={controls.length} className={styles.number} href={`${path}?page=${pageButtonIndex}`}>{pageButtonIndex}</a>
+                    <a 
+                        key={controls.length} 
+                        className={styles.number} 
+                        href={`${path}?page=${pageButtonIndex}`}
+                        onClick={(e) => { handleNavigate(e, `${path}?page=${pageButtonIndex}`); }}
+                        >{pageButtonIndex}</a>
             );
         }
 
@@ -75,7 +86,12 @@ function Paginator({currentPage, totalPages}) {
 
         // Do we need control to go to the last page on the right side of page buttons?
         if(lastPageForButtons < totalPages) {
-            controls.push(<a key={controls.length} className={styles.number} href={`${path}?page=${totalPages}`}>{totalPages}</a>);
+            controls.push(<a 
+                key={controls.length} 
+                className={styles.number} 
+                href={`${path}?page=${totalPages}`}
+                onClick={(e) => { handleNavigate(e, `${path}?page=${totalPages}`); }}
+                >{totalPages}</a>);
         }
     }
 

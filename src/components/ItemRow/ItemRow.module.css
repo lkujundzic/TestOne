@@ -1,6 +1,5 @@
 .itemRow {
-    padding-left: 16px;
-    padding-right: 30px;
+    padding-left: 1rem;
 
     display: flex;
     align-items: center;
@@ -12,12 +11,13 @@
 }
 
 .itemImage {
-    width: 74px;
-    height: 74px;
+    width: 4.75rem;
+    height: 4.75rem;
 
-    margin: 16px;
+    margin: 1rem;
 
     background: #303133;
+    transition: all 0.5s;
 }
 
 .itemImageSelected {
@@ -26,8 +26,8 @@
 
 .itemCenterImage {
     display: block;
-    width: 74px;
-    height: 74px;
+    width: 4.75rem;
+    height: 4.75rem;
 
     position: fixed;
     top: 50%;
@@ -50,15 +50,16 @@
 }
 
 .itemText {
-    padding-left: 16px;
+    padding-left: 1rem;
 
     font-family: "Helvetica";
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
 
     color: #303133;
+    transition: all 0.5s;
 }
 
 .itemTextSelected {

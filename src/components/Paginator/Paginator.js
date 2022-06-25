@@ -81,11 +81,9 @@ function Paginator({currentPage, totalPages}) {
 
     return (
         <div className={styles.paginator}>
-            <div>
-                {controls}
-                <button className={styles.button} disabled={currentPage === 1} onClick={() => { navigate(`${path}?page=${currentPage - 1}`); }}>&lt;</button>
-                <button className={styles.button} disabled={currentPage === totalPages} onClick={() => { navigate(`${path}?page=${currentPage + 1}`) }}>&gt;</button>
-            </div>
+            {controls}
+            <button className={styles.button} disabled={currentPage === 1} onClick={() => { navigate(`${path}?page=${currentPage - 1}`); }}>&lt;</button>
+            <button className={styles.button} disabled={currentPage === totalPages} onClick={() => { navigate(`${path}?page=${currentPage + 1}`) }}>&gt;</button>
         </div>
     );
 }

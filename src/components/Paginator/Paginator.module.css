@@ -1,5 +1,5 @@
 .paginator {
-    height: 2rem;
+    height: 2.5rem;
     padding-right: 1rem;
 
     position: fixed;
@@ -10,6 +10,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
+    background: #E5E5E5;
 }
 
 .number {
@@ -27,17 +29,17 @@
 /* unvisited link */
 .number:link,
 .number:visited {
-    color: blue;
+    color: #06A9F6;
 }
 
 /* mouse over link */
 .number:hover {
-    color: blue;
+    color: #4BBCF2;
 }
 
 /* selected link */
 .number:active {
-    color: blue;
+    color: #4BBCF2;
 }
 
 .inactive {
@@ -54,6 +56,7 @@
 }
 
 .button {
+    height: 1.5rem;
     margin-left: 0.4rem;
 
     font-family: "Helvetica";
@@ -62,6 +65,14 @@
     background: #ffffff;
     border: 1px solid #d6d8da;
     border-radius: 3px;
+}
+
+.button:hover {
+    font-weight: bold;
+}
+
+.button:active {
+    font-weight: bold;
 }
 
 .button:disabled {

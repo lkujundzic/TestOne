@@ -1,0 +1,45 @@
+.itemRow {
+    padding-left: 16px;
+    padding-right: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    background: #e5e5e5;
+    border: 0px;
+    border-bottom: 5px solid #eaeaea;
+}
+
+.itemImage {
+    width: 74px;
+    height: 74px;
+
+    margin: 16px;
+
+    background: #303133;
+}
+
+.itemImageSelected {
+    width: 74px;
+    height: 74px;
+
+    background: #303133;
+    opacity: 0.5;
+}
+
+.itemText {
+    padding-left: 16px;
+
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #303133;
+}
+
+.itemText__selected {
+    color: #06a9f6;
+}

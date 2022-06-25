@@ -1,0 +1,21 @@
+.header {
+    height: 1.8rem;
+    padding-left: 1rem;
+
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+
+    font-family: "Helvetica";
+    font-size: 1rem;
+    font-weight: bold;
+
+    letter-spacing: -0.016em;
+
+    color: #000000;
+    background: #f3f3f3;
+}
